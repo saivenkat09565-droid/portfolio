@@ -150,8 +150,6 @@ h2.section-title{font-family:var(--font-head);font-weight:900;font-size:clamp(2r
 .portfolio-overlay-btn:hover{background:var(--blue);color:var(--white)}
 
 /* ADMIN PANEL */
-.admin-toggle-btn{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:var(--white);border:none;padding:11px 24px;border-radius:4px;font-family:var(--font-head);font-size:.72rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;cursor:none;transition:all .3s;margin-top:24px}
-.admin-toggle-btn:hover{background:var(--blue)}
 .admin-panel{display:none;background:var(--white);border:2px solid var(--gray-100);border-radius:var(--radius);padding:36px;margin-top:24px;box-shadow:var(--shadow-md)}
 .admin-panel.open{display:block;animation:fadeSlideUp .4s var(--transition) both}
 .admin-panel-title{font-family:var(--font-head);font-weight:900;font-size:1.05rem;letter-spacing:-.01em;margin-bottom:4px}
@@ -431,56 +429,6 @@ body.dark{--white:#111009;--off:#171410;--gray-50:#1c1916;--gray-100:#252118;--g
   <div class="portfolio-scroll-wrap reveal" id="portfolioScrollWrap">
     <div class="portfolio-track" id="portfolioTrack"></div>
   </div>
-  <div style="margin-top:24px;" class="reveal">
-    <button class="admin-toggle-btn" onclick="toggleAdmin()">⚙ Manage Portfolio</button>
-  </div>
-  <div class="admin-panel" id="adminPanel">
-    <div class="admin-panel-title">🗂 Portfolio Admin Panel</div>
-    <div class="admin-panel-sub">Add or remove projects. All changes are saved in your browser automatically.</div>
-    <div class="admin-section-label">Choose Icon</div>
-    <div class="emoji-picker" id="emojiPicker">
-      <div class="emoji-opt selected" data-emoji="🖥" onclick="selectEmoji(this)">🖥</div>
-      <div class="emoji-opt" data-emoji="📱" onclick="selectEmoji(this)">📱</div>
-      <div class="emoji-opt" data-emoji="🎬" onclick="selectEmoji(this)">🎬</div>
-      <div class="emoji-opt" data-emoji="🏷" onclick="selectEmoji(this)">🏷</div>
-      <div class="emoji-opt" data-emoji="📸" onclick="selectEmoji(this)">📸</div>
-      <div class="emoji-opt" data-emoji="✨" onclick="selectEmoji(this)">✨</div>
-      <div class="emoji-opt" data-emoji="🎯" onclick="selectEmoji(this)">🎯</div>
-      <div class="emoji-opt" data-emoji="💎" onclick="selectEmoji(this)">💎</div>
-      <div class="emoji-opt" data-emoji="🚀" onclick="selectEmoji(this)">🚀</div>
-      <div class="emoji-opt" data-emoji="🌐" onclick="selectEmoji(this)">🌐</div>
-    </div>
-    <div class="admin-section-label">Card Background Color</div>
-    <div class="color-picker-row" id="colorPicker">
-      <div class="color-opt selected" data-color="linear-gradient(135deg,#dbeafe,#f3e8ff)" style="background:linear-gradient(135deg,#dbeafe,#f3e8ff)" onclick="selectColor(this)"></div>
-      <div class="color-opt" data-color="linear-gradient(135deg,#fef3c7,#fde8e4)" style="background:linear-gradient(135deg,#fef3c7,#fde8e4)" onclick="selectColor(this)"></div>
-      <div class="color-opt" data-color="linear-gradient(135deg,#fce7f3,#f3e8ff)" style="background:linear-gradient(135deg,#fce7f3,#f3e8ff)" onclick="selectColor(this)"></div>
-      <div class="color-opt" data-color="linear-gradient(135deg,#dcfce7,#dbeafe)" style="background:linear-gradient(135deg,#dcfce7,#dbeafe)" onclick="selectColor(this)"></div>
-      <div class="color-opt" data-color="linear-gradient(135deg,#ccfbf1,#dbeafe)" style="background:linear-gradient(135deg,#ccfbf1,#dbeafe)" onclick="selectColor(this)"></div>
-      <div class="color-opt" data-color="linear-gradient(135deg,#fde8e4,#fef3c7)" style="background:linear-gradient(135deg,#fde8e4,#fef3c7)" onclick="selectColor(this)"></div>
-      <div class="color-opt" data-color="linear-gradient(135deg,#e0e7ff,#fce7f3)" style="background:linear-gradient(135deg,#e0e7ff,#fce7f3)" onclick="selectColor(this)"></div>
-      <div class="color-opt" data-color="linear-gradient(135deg,#f0fdf4,#dcfce7)" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7)" onclick="selectColor(this)"></div>
-    </div>
-    <div class="admin-section-label">Project Details</div>
-    <div class="admin-form-row">
-      <input type="text" class="admin-input" id="adminTitle" placeholder="Project Title (required)">
-      <input type="text" class="admin-input" id="adminTool" placeholder="Tool used (required)">
-      <select class="admin-select" id="adminCat">
-        <option value="web">Websites</option>
-        <option value="video">Video</option>
-        <option value="brand">Branding</option>
-        <option value="social">Social Media</option>
-      </select>
-    </div>
-    <div style="display:flex;gap:12px;align-items:center;">
-      <input type="text" class="admin-input" id="adminLink" placeholder="Project URL or # (optional)" style="flex:1;">
-      <button class="admin-add-btn" onclick="addProject()">+ Add Project</button>
-    </div>
-    <div class="admin-projects-list">
-      <div class="admin-projects-title">All Projects (<span id="projectCount">0</span>)</div>
-      <div id="adminProjectsList"></div>
-    </div>
-  </div>
 </section>
 
 <!-- PROCESS -->
@@ -569,8 +517,9 @@ body.dark{--white:#111009;--off:#171410;--gray-50:#1c1916;--gray-100:#252118;--g
         <a href="#" class="contact-link"><span class="contact-link-icon">📅</span>Book a Free Discovery Call</a>
       </div>
       <div class="contact-social">
-        <a href="#" class="social-btn">🎨</a><a href="#" class="social-btn">🏀</a>
-        <a href="#" class="social-btn">📷</a><a href="#" class="social-btn">💼</a><a href="#" class="social-btn">▶️</a>
+        <a href="https://www.linkedin.com/in/" class="social-btn" title="LinkedIn">💼</a>
+        <a href="https://www.instagram.com/" class="social-btn" title="Instagram">📷</a>
+        <a href="mailto:saivenkat09565@gmail.com" class="social-btn" title="Email">✉️</a>
       </div>
     </div>
     <div class="contact-form reveal reveal-delay-1">
@@ -601,11 +550,11 @@ body.dark{--white:#111009;--off:#171410;--gray-50:#1c1916;--gray-100:#252118;--g
     </div>
     <div><div class="footer-col-title">Services</div><ul class="footer-links"><li><a href="#">Web Design</a></li><li><a href="#">UI/UX Design</a></li><li><a href="#">Video Editing</a></li><li><a href="#">Branding</a></li><li><a href="#">Social Media</a></li></ul></div>
     <div><div class="footer-col-title">Work</div><ul class="footer-links"><li><a href="#">Portfolio</a></li><li><a href="#">Case Studies</a></li><li><a href="#">Testimonials</a></li><li><a href="#">Pricing</a></li></ul></div>
-    <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="#">Behance</a></li><li><a href="#">Dribbble</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li><li><a href="#">Contact Me</a></li></ul></div>
+    <div><div class="footer-col-title">Connect</div><ul class="footer-links"><li><a href="https://www.linkedin.com/in/">LinkedIn</a></li><li><a href="https://www.instagram.com/">Instagram</a></li><li><a href="mailto:saivenkat09565@gmail.com">Email Me</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2025 Sai Venkat. Crafted with ♡ and lots of Tea.</span>
-    <div class="footer-social"><a href="#">Be</a><a href="#">Dr</a><a href="#">Li</a><a href="#">Ig</a></div>
+    <div class="footer-social"><a href="https://www.linkedin.com/in/" title="LinkedIn">Li</a><a href="https://www.instagram.com/" title="Instagram">Ig</a><a href="mailto:saivenkat09565@gmail.com" title="Email">✉</a></div>
   </div>
 </footer>
 
@@ -659,25 +608,47 @@ wrap.addEventListener('mousemove',e=>{if(!isDown)return;e.preventDefault();wrap.
 
 /* PORTFOLIO */
 const CAT_LABELS={all:'All',web:'Websites',video:'Video',brand:'Branding',social:'Social Media'};
-const defaultProjects=[
-  {id:1,title:'SaaS Landing Page',tool:'Webflow',cat:'web',emoji:'🖥',color:'linear-gradient(135deg,#dbeafe,#f3e8ff)',link:'#'},
-  {id:2,title:'Luxury Brand Identity',tool:'Illustrator',cat:'brand',emoji:'🏷',color:'linear-gradient(135deg,#fef3c7,#fde8e4)',link:'#'},
-  {id:3,title:'Product Launch Film',tool:'Premiere Pro',cat:'video',emoji:'🎬',color:'linear-gradient(135deg,#fce7f3,#f3e8ff)',link:'#'},
-  {id:4,title:'Instagram Campaign',tool:'Photoshop',cat:'social',emoji:'📸',color:'linear-gradient(135deg,#dcfce7,#dbeafe)',link:'#'},
-  {id:5,title:'Mobile App UI',tool:'Figma',cat:'web',emoji:'📱',color:'linear-gradient(135deg,#ccfbf1,#dbeafe)',link:'#'},
-  {id:6,title:'E-Commerce Redesign',tool:'Webflow',cat:'web',emoji:'🌐',color:'linear-gradient(135deg,#e0e7ff,#fce7f3)',link:'#'},
-  {id:7,title:'Podcast Brand Kit',tool:'Illustrator',cat:'brand',emoji:'💎',color:'linear-gradient(135deg,#fde8e4,#fef3c7)',link:'#'},
-  {id:8,title:'YouTube Channel Reel',tool:'After Effects',cat:'video',emoji:'✨',color:'linear-gradient(135deg,#f0fdf4,#dcfce7)',link:'#'},
-  {id:9,title:'LinkedIn Content Pack',tool:'Photoshop',cat:'social',emoji:'🎯',color:'linear-gradient(135deg,#dbeafe,#fce7f3)',link:'#'},
-  {id:10,title:'Startup Homepage',tool:'Framer',cat:'web',emoji:'🚀',color:'linear-gradient(135deg,#f3e8ff,#dbeafe)',link:'#'},
-];
 
-function loadProjects(){try{const s=localStorage.getItem('ar_portfolio');return s?JSON.parse(s):defaultProjects;}catch(e){return defaultProjects;}}
-function saveProjects(p){try{localStorage.setItem('ar_portfolio',JSON.stringify(p));}catch(e){}}
-let projects=loadProjects();
+/* ── Supabase helpers (reads same config as admin panel) ── */
+/* ── SUPABASE CONFIG — paste your project URL and anon key here ── */
+const SB_URL = 'https://hiqgsatjpfhfpyjbgdlt.supabase.co';   // e.g. https://xxxx.supabase.co
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhpcWdzYXRqcGZoZnB5amJnZGx0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg2NzQxNjYsImV4cCI6MjA5NDI1MDE2Nn0.lSE29nUF-0rka4RV-AJMnh1k4CW0TAhLX_ly1nNs4Wg';
+
+function getSbConfig(){
+  // 1. Use hardcoded values if set
+  if(SB_URL && SB_URL !== 'YOUR_SUPABASE_URL') return {url:SB_URL, key:SB_KEY};
+  // 2. Fallback: try localStorage (works when served from same origin as admin)
+  try{return JSON.parse(localStorage.getItem('sb_config')||'null');}catch(e){return null;}
+}
+
+async function fetchProjectsFromSupabase(){
+  const cfg=getSbConfig();
+  if(!cfg||!cfg.url||!cfg.key)return null; // not configured
+  try{
+    const res=await fetch(cfg.url+'/rest/v1/portfolio_projects?select=*&order=created_at.asc',{
+      headers:{'apikey':cfg.key,'Authorization':'Bearer '+cfg.key}
+    });
+    if(!res.ok)return null;
+    return await res.json();
+  }catch(e){return null;}
+}
+
+let projects=[];
 let currentFilter='all';
 let selectedEmoji='🖥';
 let selectedColor='linear-gradient(135deg,#dbeafe,#f3e8ff)';
+
+async function initPortfolio(){
+  const remote=await fetchProjectsFromSupabase();
+  if(remote!==null){
+    projects=remote;
+  } else {
+    // Supabase not connected — show empty state
+    projects=[];
+  }
+  renderPortfolio();
+  renderAdminList();
+}
 
 function renderPortfolio(){
   const track=document.getElementById('portfolioTrack');
@@ -720,14 +691,27 @@ function filterPortfolio(btn,cat){
 function selectEmoji(el){document.querySelectorAll('.emoji-opt').forEach(e=>e.classList.remove('selected'));el.classList.add('selected');selectedEmoji=el.dataset.emoji;}
 function selectColor(el){document.querySelectorAll('.color-opt').forEach(e=>e.classList.remove('selected'));el.classList.add('selected');selectedColor=el.dataset.color;}
 
-function addProject(){
+async function addProject(){
   const title=document.getElementById('adminTitle').value.trim();
   const tool=document.getElementById('adminTool').value.trim();
   const cat=document.getElementById('adminCat').value;
   const link=document.getElementById('adminLink').value.trim()||'#';
   if(!title||!tool){alert('Please fill in the Project Title and Tool fields.');return;}
-  projects.push({id:Date.now(),title,tool,cat,emoji:selectedEmoji,color:selectedColor,link});
-  saveProjects(projects);
+  const cfg=getSbConfig();
+  if(cfg&&cfg.url&&cfg.key){
+    try{
+      const res=await fetch(cfg.url+'/rest/v1/portfolio_projects',{
+        method:'POST',
+        headers:{'apikey':cfg.key,'Authorization':'Bearer '+cfg.key,'Content-Type':'application/json','Prefer':'return=representation'},
+        body:JSON.stringify([{title,tool,cat,emoji:selectedEmoji,color:selectedColor,link}])
+      });
+      if(!res.ok)throw new Error(await res.text());
+      const data=await res.json();
+      projects.push(data[0]);
+    }catch(e){alert('Failed to save to Supabase: '+e.message);return;}
+  } else {
+    projects.push({id:Date.now(),title,tool,cat,emoji:selectedEmoji,color:selectedColor,link});
+  }
   renderPortfolio();
   renderAdminList();
   document.getElementById('adminTitle').value='';
@@ -735,21 +719,25 @@ function addProject(){
   document.getElementById('adminLink').value='';
 }
 
-function deleteProject(id){
+async function deleteProject(id){
   if(!confirm('Remove this project?'))return;
+  const cfg=getSbConfig();
+  if(cfg&&cfg.url&&cfg.key){
+    try{
+      const res=await fetch(cfg.url+'/rest/v1/portfolio_projects?id=eq.'+id,{
+        method:'DELETE',
+        headers:{'apikey':cfg.key,'Authorization':'Bearer '+cfg.key}
+      });
+      if(!res.ok)throw new Error(await res.text());
+    }catch(e){alert('Failed to delete from Supabase: '+e.message);return;}
+  }
   projects=projects.filter(p=>p.id!==id);
-  saveProjects(projects);
   renderPortfolio();
   renderAdminList();
 }
 
-function toggleAdmin(){
-  const panel=document.getElementById('adminPanel');
-  panel.classList.toggle('open');
-  if(panel.classList.contains('open'))renderAdminList();
-}
 
-renderPortfolio();
+initPortfolio();
 
 /* CONTACT → EMAIL */
 function handleSubmit(){
