@@ -30,11 +30,16 @@ export type Project = { id: string; name: string; industry: string; services: st
 export const projects: Project[] = [
   { id: 'sag', name: 'SAG Drone Technologies', industry: 'Agriculture Technology', services: ['Digital marketing strategy', 'Social media management', 'Product marketing', 'Promotional campaigns', 'Drone product content', 'Training program promotions'], summary: 'Developed digital marketing and promotional strategies for an agriculture drone technology company, focusing on product awareness, training promotions and brand communication.' ,
     image: '/projects/sag.jpg' },
-  { id: 'korlance', name: 'Korlance', industry: 'IT Education & Training', services: ['Social media marketing', 'Content planning', 'Creative campaigns', 'Promotional reels', 'Brand communication'], summary: 'Social media marketing, content planning and promotional reels for an IT education and training brand.' },
-  { id: 'mighty', name: 'Mighty Events', industry: 'Event Management', services: ['Social media marketing', 'Event promotion', 'Creative content', 'Reels and promotional campaigns'], summary: 'Social media marketing and event promotion through creative content and reels for an event management business.' },
-  { id: 'chaitra', name: 'Chaitra Collections', industry: 'Fashion & Retail', services: ['Social media management', 'Promotional content', 'Brand communication', 'Content planning'], summary: 'Social media management, promotional content and content planning for a fashion and retail brand.' },
-  { id: 'krishi', name: 'Krishi Abhi Drones LLP', industry: 'Agriculture Technology', services: ['Digital marketing', 'Website development coordination', 'Promotional content', 'Brand visibility'], summary: 'Digital marketing, promotional content and website development coordination to build brand visibility.' },
-  { id: 'star', name: 'Star Agri Drones', industry: 'Agriculture Technology', services: ['Promotional campaigns', 'Digital brand communication', 'Marketing content'], summary: 'Promotional campaigns and marketing content to communicate the brand digitally.' },
+  { id: 'korlance', name: 'Korlance', industry: 'IT Education & Training', services: ['Social media marketing', 'Content planning', 'Creative campaigns', 'Promotional reels', 'Brand communication'], summary: 'Social media marketing, content planning and promotional reels for an IT education and training brand.',
+    image: '/projects/korlance.jpg' },
+  { id: 'mighty', name: 'Mighty Events', industry: 'Event Management', services: ['Social media marketing', 'Event promotion', 'Creative content', 'Reels and promotional campaigns'], summary: 'Social media marketing and event promotion through creative content and reels for an event management business.' ,
+    image: '/projects/mighty.jpg' },
+  { id: 'chaitra', name: 'Chaitra Collections', industry: 'Fashion & Retail', services: ['Social media management', 'Promotional content', 'Brand communication', 'Content planning'], summary: 'Social media management, promotional content and content planning for a fashion and retail brand.' ,
+    image: '/projects/chaitra.jpg' },
+  { id: 'krishi', name: 'Krishi Abhi Drones LLP', industry: 'Agriculture Technology', services: ['Digital marketing', 'Website development coordination', 'Promotional content', 'Brand visibility'], summary: 'Digital marketing, promotional content and website development coordination to build brand visibility.' 
+    image: '/projects/krishi.jpg' },
+  { id: 'star', name: 'Star Agri Drones', industry: 'Agriculture Technology', services: ['Promotional campaigns', 'Digital brand communication', 'Marketing content'], summary: 'Promotional campaigns and marketing content to communicate the brand digitally.' 
+    image: '/projects/star.jpg' },
 ]
 export const metrics = [
   { v: 50, s: 'K+', l: 'Organic reach in 30 days', a: true },
