@@ -36,9 +36,9 @@ export const projects: Project[] = [
     image: '/projects/mighty.jpg' },
   { id: 'chaitra', name: 'Chaitra Collections', industry: 'Fashion & Retail', services: ['Social media management', 'Promotional content', 'Brand communication', 'Content planning'], summary: 'Social media management, promotional content and content planning for a fashion and retail brand.' ,
     image: '/projects/chaitra.jpg' },
-  { id: 'krishi', name: 'Krishi Abhi Drones LLP', industry: 'Agriculture Technology', services: ['Digital marketing', 'Website development coordination', 'Promotional content', 'Brand visibility'], summary: 'Digital marketing, promotional content and website development coordination to build brand visibility.' 
+  { id: 'krishi', name: 'Krishi Abhi Drones LLP', industry: 'Agriculture Technology', services: ['Digital marketing', 'Website development coordination', 'Promotional content', 'Brand visibility'], summary: 'Digital marketing, promotional content and website development coordination to build brand visibility.' ,
     image: '/projects/krishi.jpg' },
-  { id: 'star', name: 'Star Agri Drones', industry: 'Agriculture Technology', services: ['Promotional campaigns', 'Digital brand communication', 'Marketing content'], summary: 'Promotional campaigns and marketing content to communicate the brand digitally.' 
+  { id: 'star', name: 'Star Agri Drones', industry: 'Agriculture Technology', services: ['Promotional campaigns', 'Digital brand communication', 'Marketing content'], summary: 'Promotional campaigns and marketing content to communicate the brand digitally.' ,
     image: '/projects/star.jpg' },
 ]
 export const metrics = [
