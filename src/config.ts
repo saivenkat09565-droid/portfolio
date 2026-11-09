@@ -5,8 +5,8 @@ export const site = {
   email: 'saivenkat09565@gmail.com',
   phone: '+91 93902 38537',
   location: 'West Godavari, Andhra Pradesh, India',
-  linkedin: 'https://www.linkedin.com/in/REPLACE', // REPLACE
-  instagram: 'https://www.instagram.com/REPLACE', // REPLACE
+  linkedin: 'www.linkedin.com/in/saivenkat', // REPLACE
+  instagram: 'https://www.instagram.com/venova.digitals/', // REPLACE
   resume: '/Sai_Venkat_Resume.pdf',
   portrait: '/sai-venkat.jpg',
   formEndpoint: '', // Optional: paste a Formspree/Getform URL. Empty = opens your email app.
@@ -28,7 +28,8 @@ export const expertise = [
 export type Project = { id: string; name: string; industry: string; services: string[]; summary: string; image?: string }
 // To add visuals: drop files in /public/projects and set image: '/projects/xyz.jpg'
 export const projects: Project[] = [
-  { id: 'sag', name: 'SAG Drone Technologies', industry: 'Agriculture Technology', services: ['Digital marketing strategy', 'Social media management', 'Product marketing', 'Promotional campaigns', 'Drone product content', 'Training program promotions'], summary: 'Developed digital marketing and promotional strategies for an agriculture drone technology company, focusing on product awareness, training promotions and brand communication.' },
+  { id: 'sag', name: 'SAG Drone Technologies', industry: 'Agriculture Technology', services: ['Digital marketing strategy', 'Social media management', 'Product marketing', 'Promotional campaigns', 'Drone product content', 'Training program promotions'], summary: 'Developed digital marketing and promotional strategies for an agriculture drone technology company, focusing on product awareness, training promotions and brand communication.' 
+    image: '/projects/sag.jpg' },
   { id: 'korlance', name: 'Korlance', industry: 'IT Education & Training', services: ['Social media marketing', 'Content planning', 'Creative campaigns', 'Promotional reels', 'Brand communication'], summary: 'Social media marketing, content planning and promotional reels for an IT education and training brand.' },
   { id: 'mighty', name: 'Mighty Events', industry: 'Event Management', services: ['Social media marketing', 'Event promotion', 'Creative content', 'Reels and promotional campaigns'], summary: 'Social media marketing and event promotion through creative content and reels for an event management business.' },
   { id: 'chaitra', name: 'Chaitra Collections', industry: 'Fashion & Retail', services: ['Social media management', 'Promotional content', 'Brand communication', 'Content planning'], summary: 'Social media management, promotional content and content planning for a fashion and retail brand.' },
@@ -45,5 +46,4 @@ export const responsibilities = ['Developing digital marketing strategies', 'Man
 export const tools = ['Canva', 'Meta Ads Manager', 'Google Ads', 'CapCut', 'Instagram', 'Facebook', 'LinkedIn', 'YouTube']
 export const education = [
   { t: 'Bachelor of Technology (B.Tech)', d: 'Electronics & Communication Engineering', w: 'Vishnu Institute of Technology, Bhimavaram', y: '2021 – 2025' },
-  { t: 'Diploma in Agriculture', d: '', w: '', y: '2023' },
 ]
